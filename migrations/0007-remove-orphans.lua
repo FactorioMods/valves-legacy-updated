@@ -1,0 +1,2 @@
+-- Legacy1.2 worlds already contain the authoritative controller layout.
+-- Keep existing pumps, gauges, combinators and their references; do not rebuild them.

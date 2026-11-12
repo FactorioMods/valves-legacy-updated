@@ -1,15 +1,16 @@
 {
-  "name": "valves",
-  "version": "3.0.0",
-  "title": "Valves",
-  "description": "Adds three seperate animated valves for pipes: overflow, top-up and one-way/check valves. Inspired by Flow Control and Advanced Fluid Handling. The thresholds can be configured using shortcuts. Uses valve functionality provided by Factorio.",
-  "author": "stringweasel",
+  "name": "valves-legacy-updated",
+  "version": "1.0.0",
+  "title": "Valves: Legacy Controller",
+  "description": "Preserves Valves 1.2 pump controllers and their saved identities, fluid buffers and circuit connections when moving legacy worlds to Factorio 2.1. Existing pump, gauge, item and recipe names remain unchanged. Use maintained Valves 3 for modern native-valve worlds.",
+  "author": "stringweasel; FactorioMods (legacy-world compatibility)",
   "factorio_version": "2.1",
-  "dependencies": [ 
-    "base >= 2.1.6",
-    "valves-lib >= 2.0.0"
+  "dependencies": [
+    "base >= 2.1.24",
+    "! valves"
   ],
-  "package":{
-    "ignore":[ "*.md", "*.zip", "mod-page/*" ]
-  }
+  "migrates_from": [
+    "valves"
+  ],
+  "homepage": "https://github.com/FactorioMods/valves-legacy-updated"
 }

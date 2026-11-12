@@ -1,2 +1,4 @@
 require("prototypes.valves")
-require("prototypes.mod-data")
+require("prototypes.hidden-tanks")
+require("prototypes.tiny-combinators")
+require("prototypes.inputs")

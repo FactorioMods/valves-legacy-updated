@@ -5,13 +5,9 @@ overflow/underflow valves. Otherwise we are equivalent to a pump.
 Since the fancy Py valves are currently disabled, we pick the tech
 based on the check valve, but still pull the recipe from the overflow
 valve for balance reasons.
-
-NOTE: This file is hacky, and has code that has to be in valves-lib. Meh.
 ]]--
 
-local valves = data.raw["mod-data"]["mod-valves"].data.valves
----@cast valves table<string, data.ValvesModValveConfig>
-assert(valves, "Failed to find mod-valves data")
+local constants = require("__valves-legacy-updated__.constants")
 
 ---@type string
 local base_recipe_item
@@ -32,13 +28,11 @@ for _, technology in pairs(data.raw.technology) do
             if effect.type == "unlock-recipe" then
                 if effect.recipe == base_tech_item then
                   tech_to_unlock = technology
-                  for valve_name, valve_config in pairs(valves) do
-                    if not valve_config.ignore_techs then
-                      table.insert(tech_to_unlock.effects, index, {
-                        type = "unlock-recipe",
-                        recipe = valve_name
-                      })
-                    end
+                  for valve_type in pairs(constants.valve_types) do
+                    table.insert(tech_to_unlock.effects, index, {
+                      type = "unlock-recipe",
+                      recipe = "valves-"..valve_type
+                    })
                   end
                   break
                 end
@@ -62,16 +56,7 @@ for _, recipe in pairs(data.raw.recipe) do
   if ingredients then break end
 end
 
--- Make sure the valves are grouped with the pumps
-local item_sub_group = "energy-pipe-distribution"
-if data.raw["item"]["pump"] then
-  item_sub_group = data.raw["item"]["pump"].subgroup
-end
-
-for valve_name, valve_config in pairs(valves) do
-  if not valve_config.ignore_techs then
-    data.raw.recipe[valve_name].enabled = tech_to_unlock == nil
-    data.raw.recipe[valve_name].ingredients = ingredients
-    data.raw.item[valve_name].subgroup = item_sub_group
-  end
+for valve_type in pairs(constants.valve_types) do
+  data.raw.recipe["valves-"..valve_type].enabled = tech_to_unlock == nil
+  data.raw.recipe["valves-"..valve_type].ingredients = ingredients
 end

@@ -1,74 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 3.0.0
-Date: 20.06.2026
-  Features:
-    - Updated to support Factorio 2.1.
-  Changes:
-    - Removed backwards compatibility from before Valves v2.0. Older blueprints might lose their valves.
----------------------------------------------------------------------------------------------------
-Version: 2.2.0
-Date: 14.01.2026
-  Changes:
-    - Split of generic valve functionality into separate library mod called Valves Library.
----------------------------------------------------------------------------------------------------
-Version: 2.1.1
-Date: 13.01.2026
+Version: 1.0.0
+Date: 2026-11-12
   Compatibility:
-    - Better compatibility with Bobs Adjustable Valves mod.
----------------------------------------------------------------------------------------------------
-Version: 2.1.0
-Date: 26.07.2025
-  Changes:
-    - Limit valve pump speed in mod settings to the `max_fluid_flow` utility constant.
-  Compatibility:
-    - Allow other mods to add their own valves using the new `mod-data` mechanic.
----------------------------------------------------------------------------------------------------
-Version: 2.0.6
-Date: 26.06.2025
-  Graphics:
-    - Added valve animations (snouz).
-  Bugfixes:
-    - Fixed crash when creating legacy entity from the editor (snouz).
----------------------------------------------------------------------------------------------------
-Version: 2.0.5
-Date: 14.06.2025
-  Bugfixes:
-    - Fixed crash when valve or pump is not built by a player (e.g. by a construction robot).
----------------------------------------------------------------------------------------------------
-Version: 2.0.4
-Date: 14.06.2025
-  Minor Features:
-    - Increase visibility of /valves-find-bad-connections command.
----------------------------------------------------------------------------------------------------
-Version: 2.0.3
-Date: 14.06.2025
-  Features:
-    - Warn players when valves are connected to pump in unsupported way. See Factoriopedia or modpage.
----------------------------------------------------------------------------------------------------
-Version: 2.0.2
-Date: 18.05.2025
-  Changes:
-    - Reduced the amount of valve sounds that can be played at once.
-  Compatibility:
-    - Fixed valves not always being grouped correctly with the pumps in menus.
-  Locale:
-    - Updated Russian translation by eugenikus8.
----------------------------------------------------------------------------------------------------
-Version: 2.0.1
-Date: 12.05.2025
-  Bugfixes:
-    - Removed remnant debug print.
----------------------------------------------------------------------------------------------------
-Version: 2.0.0
-Date: 12.05.2025
-  Features:
-    - Valves now use new native Factorio prototypes.
-    - IMPORTANT: Old blueprints containing valves will be supported until 2.1. Please update any blueprints containing valves!
-    - Valve behaviour is now more consistent with expected behaviour.
-  Changes:
-    - Custom threshold settings are now startup settings. Old settings will be lost.
-  Compatibility:
-    - [PyIndustry] Added a setting to disable the automatic migration of PyIndustry valves.
+    - Preserve Valves 1.2 pump controllers, identities, fluid buffers and circuit wiring in Factorio 2.1.
+    - Keep legacy item/recipe names and threshold controls; adopt previous saved ownership before initialization.
+    - Adapt linked-fluid connection APIs without a per-tick Lua loop.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.1
 Date: 22.03.2025
