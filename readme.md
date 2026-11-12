@@ -4,7 +4,7 @@ For existing worlds using Valves 1.2 pump controllers. This fork keeps their ori
 
 Use maintained [Valves](https://mods.factorio.com/mod/valves) for worlds already using native valves. Both providers cannot be active together. This fork replaces the old `valves` mod through native ownership migration, preserving its saved root before initialization. Existing controller components are not rebuilt during migration.
 
-Controls remain Numpad+ / Numpad- for thresholds, with the original configurable shortcuts and default-threshold settings. Circuit operations and fluid movement run in the engine; Lua responds to construction, mining, rotation and compatibility events. There is no added per-tick simulation loop.
+Controls remain Numpad+ / Numpad- for thresholds, using Factorio 2.1-compatible keypad defaults, with the original configurable shortcuts and default-threshold settings. Circuit operations and fluid movement run in the engine; Lua responds to construction, mining, rotation and compatibility events. There is no added per-tick simulation loop.
 
 Original author: stringweasel / Hein Wessels. Based on Configurable Valves code. Credits retained for Boskid (linked pipes), GotLag and Snouz (original pump artwork), and justarandomgeek (Factorio Modding Toolkit). The original MIT license is included unchanged. Authentic upstream history is retained; the legacy controller restoration and Factorio 2.1 API adaptation form one compatibility feature.
 

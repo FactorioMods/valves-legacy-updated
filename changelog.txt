@@ -2,6 +2,7 @@
 Version: 1.0.0
 Date: 2026-11-12
   Compatibility:
+    - Restore Factorio 2.1-compatible Numpad minus and plus default threshold shortcuts.
     - Preserve Valves 1.2 pump controllers, identities, fluid buffers and circuit wiring in Factorio 2.1.
     - Keep legacy item/recipe names and threshold controls; adopt previous saved ownership before initialization.
     - Adapt linked-fluid connection APIs without a per-tick Lua loop.
